@@ -15,7 +15,7 @@
 
 <?php
 const DB_HOST = 'mysql:dbname=myblog;host=127.0.0.1;charset=utf8';
-const DB_USER = 'blogadmin';
+const DB_USER = 'root';
 const DB_PASSWORD = 'password';
 
 //例外処理
