@@ -1,3 +1,19 @@
+#EC2インスタンスを作成する際に記述するユーザーデータ。
+
+#!/bin/bash
+
+# ホスト名
+sed -i 's/^HOSTNAME=[a-zA-Z0-9\.\-]*$/HOSTNAME=udemy-aws-14days-db-1a/g' /etc/sysconfig/network
+hostname 'udemy-aws-14days-db-1a'
+
+# タイムゾーン
+cp /usr/share/zoneinfo/Japan /etc/localtime
+sed -i 's|^ZONE=[a-zA-Z0-9\.\-\"]*$|ZONE="Asia/Tokyo”|g' /etc/sysconfig/clock
+
+# 言語設定
+echo "LANG=ja_JP.UTF-8" > /etc/sysconfig/i18n
+
+
 #MYSQLをインストールします。
 sudo yum install -y mysql57-server
 sudo chkconfig mysqld on
