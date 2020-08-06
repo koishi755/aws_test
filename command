@@ -13,6 +13,8 @@ sed -i 's|^ZONE=[a-zA-Z0-9\.\-\"]*$|ZONE="Asia/Tokyo”|g' /etc/sysconfig/clock
 # 言語設定
 echo "LANG=ja_JP.UTF-8" > /etc/sysconfig/i18n
 
+#ユーザーデータここまで
+
 
 #MYSQLをインストールします。
 sudo yum install -y mysql57-server
